@@ -1,0 +1,114 @@
+<nav>
+  <div class="nav-wrapper grey darken-1">
+    <a routerLink="/" class="brand-logo">Newborn</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li routerLinkActive="active">
+        <a routerLink="/login">Вход</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/register">Регистрация</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ul class="sidenav sidenav-fixed a-sidenav">
+  <h4>Newborn</h4>
+
+  <li
+    class="bold"
+    *ngFor="let link of links"
+    routerLinkActive="active"
+  >
+    <a [routerLink]="[link.url]" class="waves-effect waves-orange">
+      {{link.name}}
+    </a>
+  </li>
+
+  
+</ul>
+
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
+
+<div class="fixed-action-btn" #floating>
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">add</i>
+  </a>
+  <ul>
+    <li>
+      <a class="btn-floating green" routerLink="/order">
+        <i class="material-icons">assignment</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating blue" routerLink="/categories/new">
+        <i class="material-icons">list</i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+
+<main class="content">
+    <div class="page-title">
+        <h4>Menu</h4>
+        
+    </div>
+
+
+    <div class="frow order-row">
+        <div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/obzor.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/overview"><h5 class="m0">Обзор</h5></a>
+				
+            </div>
+        </div>
+        <div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/analiz.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/analytics"><h5 class="m0">Аналитика</h5></a>
+            </div>
+        </div>
+        <div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/history.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/history"><h5 class="m0">История</h5></a>
+            </div>
+        </div>
+        <div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/order.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/order"><h5 class="m0">Добавить заказ</h5></a>
+            </div>
+        </div>
+        <div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/sort.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/categories"><h5 class="m0">Ассортимент</h5></a>
+            </div>
+        </div>
+		<div class="card waves-effect pointer">
+            <div class="center">
+                <img class="resaze" src="uploads/users.png" class="responsive-img order-img">
+            </div>
+            <div class="card-content center p10">
+                <a routerLink="/users"><h5 class="m0">Пользователи</h5></a>
+            </div>
+        </div>
+    </div>
+
+</main>
+

@@ -1,0 +1,42 @@
+<div class="page-title">
+  <h4>Пользователи</h4>
+  <button
+    class="waves-effect waves-light btn grey darken-1"
+    routerLink="/users/new"
+  >
+    Добавить пользователя
+  </button>
+</div>
+
+
+
+<div
+  class="row"
+  *ngIf="users$ | async as users; else loader"
+>
+  <div class="col s12">
+    <div class="collection" *ngIf="users.length !== 0; else empty">
+      <a
+        *ngFor="let user of users"
+        [routerLink]="['/users', user._id]"
+        class="collection-item"
+      >
+        <p>Имя пользователя: {{user.name}}</p>
+		<p>Ид пользователя: {{user._id}}</p>
+		<p>E-mail пользователя: {{user.email}}</p>
+      </a>
+    </div>
+	
+    <ng-template #empty>
+      <div class="center">
+        Нет ни одного пользователя
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+
+
